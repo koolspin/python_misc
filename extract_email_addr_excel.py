@@ -28,9 +28,7 @@ def extract_email_addresses(in_file, out_file):
     new_row = 1
 
     wb = load_workbook(in_file)
-    sheet_collection = wb.sheetnames
-    if len(sheet_collection) > 0:
-        ws = wb[sheet_collection[0]]
+    for ws in wb.worksheets:
         for row in ws.rows:
             for col in row:
                 # print('Value of col: {0}'.format(col))
