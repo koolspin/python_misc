@@ -1,0 +1,22 @@
+{
+  "config": {
+    // The base uri to be used to fetch the results from
+    "lottery_results_base_uri": "https://data.ny.gov/resource/h6w8-42p9.json",
+    // An array of our numbers to match
+    "my_numbers": [
+      [1, 2, 3, 4, 5, 6],
+      [7, 8, 9, 10, 11, 12],
+      [13, 14, 15, 16, 17, 18]],
+    // Days of the week when the draws are done:
+    // 0 == Mon, 1 == Tue, 2 == Wed, 3 == Thu, 4 == Fri, 5 == Sat, 6 == Sun
+    // When the script runs, it will go back day by day until it reaches one of the days in the array below.
+    // It will then query the lottery results API with the corresponding date.
+    "draw_days": [1, 4],
+    // If the following object exists, then an email will be sent with the results
+    "smtp_config": {
+      "smtp_server": "mail.foobar.com",
+      "smtp_from": "lottery_bot@foobar.com",
+      "smtp_to": "andy@foobar.com"
+    }
+  }
+}

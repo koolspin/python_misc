@@ -1,0 +1,15 @@
+{
+  "config": {
+    "lottery_results_base_uri": "https://data.ny.gov/resource/h6w8-42p9.json",
+    "my_numbers": [
+      [1, 2, 3, 4, 5, 6],
+      [7, 8, 9, 10, 11, 12],
+      [13, 14, 15, 16, 17, 18]],
+    "draw_days": [1, 4],
+    "smtp_config": {
+      "smtp_server": "mail.foobar.com",
+      "smtp_from": "lottery_bot@foobar.com",
+      "smtp_to": "andy@foobar.com"
+    }
+  }
+}
