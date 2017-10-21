@@ -37,13 +37,12 @@ def load_config(config_path):
 def format_date_parameter(draw_days):
     draw_date = date.today()
     while True:
+        draw_date = draw_date - timedelta(days=1)
         weekday = draw_date.weekday()
         if weekday in draw_days:
             date_str = draw_date.isoformat()
             query_str = '{0}T00:00:00.000'.format(date_str)
             return query_str
-        else:
-            draw_date = draw_date - timedelta(days=1)
 
 
 def fetch_latest_results(base_uri, param):
