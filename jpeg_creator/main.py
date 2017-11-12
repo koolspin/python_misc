@@ -80,13 +80,14 @@ def base64_images(count):
         create_js_def(b64str, num)
 
 
-res = validate_args()
-if res[0]:
-    if res[1] == 'data':
-        base64_images(res[2])
+if __name__ == '__main__':
+    res = validate_args()
+    if res[0]:
+        if res[1] == 'data':
+            base64_images(res[2])
+        else:
+            save_images(res[2])
+        exit(0)
     else:
-        save_images(res[2])
-    exit(0)
-else:
-    exit(1)
+        exit(1)
 

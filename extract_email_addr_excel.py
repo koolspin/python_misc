@@ -44,10 +44,12 @@ def extract_email_addresses(in_file, out_file):
 
         new_wb.save(out_file)
 
-res = validate_args()
-if res[0]:
-    extract_email_addresses(res[1], res[2])
-    exit(0)
-else:
-    exit(1)
+
+if __name__ == '__main__':
+    res = validate_args()
+    if res[0]:
+        extract_email_addresses(res[1], res[2])
+        exit(0)
+    else:
+        exit(1)
 

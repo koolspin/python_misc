@@ -106,17 +106,18 @@ def email_results(match_info, smtp_conf):
     server.quit()
 
 
-res = validate_args()
-if res[0]:
-    conf = load_config(res[1])
-    param = format_date_parameter(conf[2])
-    results_obj = fetch_latest_results(conf[0], param)
-    winning_array = format_winning_number_array(results_obj)
-    match_info = compare_winning_numbers(winning_array, conf[1])
-    print(match_info[0])
-    print(match_info[1])
-    if conf[3] is not None:
-        email_results(match_info, conf[3])
-    exit(0)
-else:
-    exit(1)
+if __name__ == '__main__':
+    res = validate_args()
+    if res[0]:
+        conf = load_config(res[1])
+        param = format_date_parameter(conf[2])
+        results_obj = fetch_latest_results(conf[0], param)
+        winning_array = format_winning_number_array(results_obj)
+        match_info = compare_winning_numbers(winning_array, conf[1])
+        print(match_info[0])
+        print(match_info[1])
+        if conf[3] is not None:
+            email_results(match_info, conf[3])
+        exit(0)
+    else:
+        exit(1)
